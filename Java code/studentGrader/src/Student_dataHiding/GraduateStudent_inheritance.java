@@ -1,0 +1,29 @@
+
+
+package Student_dataHiding;
+
+import java.util.Scanner;
+
+// ─── INHERITANCE (CHILD CLASS) ───
+public class GraduateStudent_inheritance extends Student_dataHiding {
+    
+    private String thesisTitle;
+
+    // Child Constructor calling parent super
+    public GraduateStudent_inheritance(String rawName, String thesisTitle, Scanner inputScanner) {
+        super(rawName, inputScanner);
+        this.thesisTitle = thesisTitle; 
+    }
+
+    public String getThesisTitle() {
+        return this.thesisTitle;
+    }
+
+    // ─── NEW STEP: METHOD OVERRIDING ───
+    @Override
+    public boolean qualifiesForHonorRoll() {
+        // Graduate students must hit a tougher threshold (95.0%)
+        // Notice it calls the inherited calculateAverage() method seamlessly!
+        return calculateAverage() >= 95.0;
+    }
+}

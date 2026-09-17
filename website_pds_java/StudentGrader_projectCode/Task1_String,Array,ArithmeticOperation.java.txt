@@ -1,0 +1,52 @@
+
+package studentGrader;
+
+import java.util.Scanner;
+
+public class Task1_stringsArrayUserInput {
+    public static void main(String[] args) {
+        Scanner inputScanner = new Scanner(System.in);
+        
+        System.out.println("=== Task 1: String Input & Cleaning ===");
+        System.out.print("Enter student name (e.g., '  john doe  '): ");
+        String rawName = inputScanner.nextLine();
+        
+        String cleanName = rawName.trim();
+        String formattedName = cleanName.substring(0, 1).toUpperCase() + cleanName.substring(1);
+        System.out.println("Saved Name: '" + formattedName + "'");
+        
+        System.out.println("\n=== Task 2: Parsing & Casting ===");
+        System.out.print("Enter text grade for Math: ");
+        String mathText = inputScanner.next();
+        System.out.print("Enter text grade for Science: ");
+        String scienceText = inputScanner.next();
+        
+        int mathScore = Integer.parseInt(mathText);
+        int scienceScore = Integer.parseInt(scienceText);
+        
+        double initialAverage = (double) (mathScore + scienceScore) / 2;
+        System.out.println("Initial 2-Class Average: " + initialAverage + "%");
+        
+        // ─── ADDING TASK 3 CODE DIRECTLY BELOW ───
+        System.out.println("\n=== Task 3: Arrays & Loops ===");
+        System.out.print("How many total classes do you want to track? ");
+        int totalClasses = inputScanner.nextInt();
+        
+        int[] scheduleGrades = new int[totalClasses];
+        int arraySum = 0;
+        
+        for (int i = 0; i < scheduleGrades.length; i++) {
+            System.out.print("Enter text grade for class #" + (i + 1) + ": ");
+            String textGrade = inputScanner.next();
+            // Reuse Task 2 wrapper parsing directly inside our array tracking loop
+            scheduleGrades[i] = Integer.parseInt(textGrade);
+            arraySum += scheduleGrades[i];
+        }
+        
+        double finalAverage = (double) arraySum / scheduleGrades.length;
+        System.out.println("Final Schedule Average: " + finalAverage + "%");
+        
+        inputScanner.close();
+    }
+}
+
