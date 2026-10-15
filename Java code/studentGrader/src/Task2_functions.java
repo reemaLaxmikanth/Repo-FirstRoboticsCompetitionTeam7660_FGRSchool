@@ -55,7 +55,7 @@ public class Task2_functions {
         Scanner inputScanner = new Scanner(System.in);
         
         // --- TASK 1 CUMULATIVE REUSE ---
-        System.out.println("=== Task 1: String Input & Cleaning ===");
+        System.out.println("=== Functions Demo: Task 1: String Input & Cleaning ===");
         String formattedName = formatName(inputScanner); // Passed Scanner, returns String
         System.out.println("Saved Name: '" + formattedName + "'");
         

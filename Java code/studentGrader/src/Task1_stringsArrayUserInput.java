@@ -8,7 +8,7 @@ public class Task1_stringsArrayUserInput {
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
         
-        System.out.println("=== Task 1: String Input & Cleaning ===");
+        System.out.println("=== Strings demo: Task 1: String Input & Cleaning ===");
         System.out.print("Enter student name (e.g., '  john doe  '): ");
         String rawName = inputScanner.nextLine();
         
